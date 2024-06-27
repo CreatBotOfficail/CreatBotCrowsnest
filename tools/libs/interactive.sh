@@ -21,7 +21,7 @@ set -Ee
 ask_reboot() {
     local reply
     while true; do
-        read -erp "Reboot NOW? [y/N]: " -i "N" reply
+        reply="N"
         case "${reply}" in
             [yY]*)
                 msg "Going to reboot in 5 seconds!"
@@ -46,7 +46,7 @@ ask_update_entry() {
     run_add_update_entry="0"
     msg "\n"
     while true; do
-        read -erp "Do you want to add 'update manager' entry to your moonraker.conf? [Y/n]: " -i "Y" reply
+        reply="Y"
         case "${reply}" in
             [yY]*)
                 msg "Trying to add 'update manager' entry to moonraker.conf ..."
